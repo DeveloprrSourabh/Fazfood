@@ -15,9 +15,7 @@ exports.userRegisterController = async (req, res) => {
     if (!answer) {
       return res.status(200).send({ message: "Answer is Required" });
     }
-    if (!role) {
-      return res.status(200).send({ message: "Role is Required" });
-    }
+   
     if (!password) {
       return res.status(200).send({ message: "Password is Required" });
     }

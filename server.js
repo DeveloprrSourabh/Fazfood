@@ -20,6 +20,6 @@ app.use("/api/v1/product", productRoute);
 // Category Route
 app.use("/api/v1/category", categoryRoute);
 
-app.listen(5000, () => {
-  console.log("Server is Running on Port 5000");
+app.listen(8000, () => {
+  console.log("Server is Running on Port 8000");
 });

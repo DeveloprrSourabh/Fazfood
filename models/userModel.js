@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-    address: {
+  address: {
     type: String,
   },
   answer: {
@@ -23,6 +23,7 @@ const userSchema = mongoose.Schema({
   role: {
     type: Number,
     required: true,
+    default: 0,
   },
 });
 
