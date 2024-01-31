@@ -2,11 +2,12 @@ import React from "react";
 import Banner from "../components/Banner";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Home = () => {
   // Category Slider
   var settings = {
-    arrow: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -15,11 +16,31 @@ const Home = () => {
   };
   // Best Selling Slider
   var bestselling = {
-    arrow: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     autoplay: true,
     slidesToShow: 4,
+    slidesToScroll: 1,
+  };
+  // Client Slider
+  var clientSlide = {
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    dots: true,
+    autoplay: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+  // Gallery Slider
+  var gallerySlide = {
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    dots: false,
+    autoplay: true,
+    slidesToShow: 5,
     slidesToScroll: 1,
   };
   //  Linear Slider
@@ -425,6 +446,256 @@ const Home = () => {
           </div>
         </section>
         {/* Three Main Food End */}
+        {/* Testimonials Section Start */}
+        <section id="best-selling" className="position-relative">
+          <div className="bestselling">
+            <div className="linear-slider pb-5">
+              <Slider {...linearSlide}>
+                <div className="continuous-slide">
+                  <h2>TESTIMONIALS • TESTIMONIALS • </h2>
+                </div>
+                <div className="continuous-slide">
+                  <h2>TESTIMONIALS • TESTIMONIALS •</h2>
+                </div>
+              </Slider>
+            </div>
+            <div className="bestselling-heading">
+              <h2 className="text-center mt-2 mb-3">WHAT OUR CLIENT SAYS</h2>
+              <div class="bestselling-main-desc text-center  w-25 mx-auto">
+                A team of dreamers and doers building unique interactive music
+                and art festivals.
+              </div>
+            </div>
+            <div className="clientslider py-5">
+              <Slider {...clientSlide}>
+                <div className="main-client px-2">
+                  <div className="client-card">
+                    <div className="client-content pb-4">
+                      “ Many desktop publishing packages and web page editors
+                      now use Lorem Ipsum as their default model text, and a
+                      search for 'lorem ipsum' will uncover many web sites”
+                    </div>
+                    <div className="client-deails d-flex align-items-center">
+                      <div className="client-img pe-4">
+                        <img src="./Images/avarta2.png" alt="" />
+                      </div>
+                      <div className="client-name">Jennifer G</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="main-client px-2">
+                  <div className="client-card">
+                    <div className="client-content pb-4">
+                      “ Many desktop publishing packages and web page editors
+                      now use Lorem Ipsum as their default model text, and a
+                      search for 'lorem ipsum' will uncover many web sites”
+                    </div>
+                    <div className="client-deails d-flex align-items-center">
+                      <div className="client-img pe-4">
+                        <img src="./Images/avarta2.png" alt="" />
+                      </div>
+                      <div className="client-name">Jennifer G</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="main-client px-2">
+                  <div className="client-card">
+                    <div className="client-content pb-4">
+                      “ Many desktop publishing packages and web page editors
+                      now use Lorem Ipsum as their default model text, and a
+                      search for 'lorem ipsum' will uncover many web sites”
+                    </div>
+                    <div className="client-deails d-flex align-items-center">
+                      <div className="client-img pe-4">
+                        <img src="./Images/avarta2.png" alt="" />
+                      </div>
+                      <div className="client-name">Jennifer G</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="main-client px-2">
+                  <div className="client-card">
+                    <div className="client-content pb-4">
+                      “ Many desktop publishing packages and web page editors
+                      now use Lorem Ipsum as their default model text, and a
+                      search for 'lorem ipsum' will uncover many web sites”
+                    </div>
+                    <div className="client-deails d-flex align-items-center">
+                      <div className="client-img pe-4">
+                        <img src="./Images/avarta2.png" alt="" />
+                      </div>
+                      <div className="client-name">Jennifer G</div>
+                    </div>
+                  </div>
+                </div>
+              </Slider>
+            </div>
+          </div>
+        </section>
+        {/* Testimonials Section Start */}
+
+        {/* Blog Sectioin Start */}
+        <section id="best-selling" className="position-relative">
+          <div className="bestselling">
+            <div className="bestselling-heading">
+              <div class="blog-heading">WHAT'S UP BLOG</div>
+              <h2 className="text-center mt-2 mb-3">WHAT OUR CLIENT SAYS</h2>
+            </div>
+            <div className="clientslider py-5">
+              <Slider {...clientSlide}>
+                <div className="blog-card px-3">
+                  <div className="blog-img">
+                    <Link to={""}>
+                      <img src="./Images/blog_8-820x620.jpg" alt="" />
+                    </Link>
+                  </div>
+                  <div className="blog-details mt-2">
+                    <Link to={""}>
+                      <span className="date">october 19,2023 </span>
+                    </Link>
+                    <Link to={""}>
+                      <span className="comment">. comments(3)</span>
+                    </Link>
+                  </div>
+                  <div className="blog-title my-2">
+                    <Link to={""}>
+                      Fast Food Frenzy: A Taste of Convenience
+                    </Link>
+                  </div>
+                  <div className="blog-description mb-4 mt-3">
+                    <p className="m-0">
+                      Ac haca ullamcorper donec ante habi tasse donec imperdiet
+                      eturpis varius per a augue magna hac. Nec hac et
+                      vestibulu...
+                    </p>
+                  </div>
+                  <div className="read-more">
+                    <Link to={""}>READ MORE </Link>
+                  </div>
+                </div>
+                <div className="blog-card px-3">
+                  <div className="blog-img">
+                    <Link to={""}>
+                      <img src="./Images/blog_9-820x620.jpg" alt="" />
+                    </Link>
+                  </div>
+                  <div className="blog-details mt-2">
+                    <Link to={""}>
+                      <span className="date">october 19,2023 </span>
+                    </Link>
+                    <Link to={""}>
+                      <span className="comment">. comments(3)</span>
+                    </Link>
+                  </div>
+                  <div className="blog-title my-2">
+                    <Link to={""}>
+                      Fast Food Frenzy: A Taste of Convenience
+                    </Link>
+                  </div>
+                  <div className="blog-description mb-4 mt-3">
+                    <p className="m-0">
+                      Ac haca ullamcorper donec ante habi tasse donec imperdiet
+                      eturpis varius per a augue magna hac. Nec hac et
+                      vestibulu...
+                    </p>
+                  </div>
+                  <div className="read-more">
+                    <Link to={""}>READ MORE </Link>
+                  </div>
+                </div>
+                <div className="blog-card px-3">
+                  <div className="blog-img">
+                    <Link to={""}>
+                      <img src="./Images/blog_10-820x620.jpg" alt="" />
+                    </Link>
+                  </div>
+                  <div className="blog-details mt-2">
+                    <Link to={""}>
+                      <span className="date">october 19,2023 </span>
+                    </Link>
+                    <Link to={""}>
+                      <span className="comment">. comments(3)</span>
+                    </Link>
+                  </div>
+                  <div className="blog-title my-2">
+                    <Link to={""}>
+                      Fast Food Frenzy: A Taste of Convenience
+                    </Link>
+                  </div>
+                  <div className="blog-description mb-4 mt-3">
+                    <p className="m-0">
+                      Ac haca ullamcorper donec ante habi tasse donec imperdiet
+                      eturpis varius per a augue magna hac. Nec hac et
+                      vestibulu...
+                    </p>
+                  </div>
+                  <div className="read-more">
+                    <Link to={""}>READ MORE </Link>
+                  </div>
+                </div>
+                <div className="blog-card px-3">
+                  <div className="blog-img">
+                    <Link to={""}>
+                      <img src="./Images/blog_11-820x620.jpg" alt="" />
+                    </Link>
+                  </div>
+                  <div className="blog-details mt-2">
+                    <Link to={""}>
+                      <span className="date">october 19,2023 </span>
+                    </Link>
+                    <Link to={""}>
+                      <span className="comment">. comments(3)</span>
+                    </Link>
+                  </div>
+                  <div className="blog-title my-2">
+                    <Link to={""}>
+                      Fast Food Frenzy: A Taste of Convenience
+                    </Link>
+                  </div>
+                  <div className="blog-description mb-4 mt-3">
+                    <p className="m-0">
+                      Ac haca ullamcorper donec ante habi tasse donec imperdiet
+                      eturpis varius per a augue magna hac. Nec hac et
+                      vestibulu...
+                    </p>
+                  </div>
+                  <div className="read-more">
+                    <Link to={""}>READ MORE </Link>
+                  </div>
+                </div>
+              </Slider>
+            </div>
+          </div>
+        </section>
+        {/* Blog Sectioin End */}
+
+        {/* Gallery Section Start */}
+        <section id="gallery-section">
+          <div className="home-gallery">
+            <Slider {...gallerySlide}>
+              <div className="gallery-img">
+                <img src="./Images/gallery5.jpg" alt="" />
+              </div>
+              <div className="gallery-img">
+                <img src="./Images/gallery1.jpg" alt="" />
+              </div>
+              <div className="gallery-img">
+                <img src="./Images/gallery2.jpg" alt="" />
+              </div>
+              <div className="gallery-img">
+                <img src="./Images/gallery3.jpg" alt="" />
+              </div>
+              <div className="gallery-img">
+                <img src="./Images/gallery4.jpg" alt="" />
+              </div>
+              <div className="gallery-img">
+                <img src="./Images/gallery1.jpg" alt="" />
+              </div>
+            </Slider>
+          </div>
+        </section>
+        {/* Gallery Section End */}
+        <Footer />
       </div>
     </main>
   );
