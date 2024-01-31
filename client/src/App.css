@@ -731,6 +731,9 @@ img#compl-img {
 .menu-list a:hover {
   color: #c33130;
 }
+.header-login a {
+  color: #464646;
+}
 #footer-product-menu .footer-menu-ul {
   column-count: 2;
 }
@@ -771,3 +774,44 @@ img#compl-img {
   border-top: 1px solid #80808045;
 }
 /* Footer End */
+
+/* Register Login Page Start */
+div#login {
+  background-image: url(../public//Images/login.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.login-page {
+  height: 100vh;
+}
+.login-page form {
+  width: 31%;
+  background: #f4f1ea;
+  padding: 20px;
+  border-radius: 10px;
+}
+.login-input input {
+  border: none;
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border-bottom: 1px solid;
+  padding: 10px;
+}
+.login-input {
+  margin: 10px 0px;
+}
+.login-btn {
+  width: fit-content;
+  margin: auto;
+  background: transparent;
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-input input::placeholder {
+  color: #000;
+}
+/* Register Login Page End */

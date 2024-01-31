@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [menu, setMenu] = useState(true);
   const [category, setCategory] = useState(false);
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
   let body = document.getElementById("root");
 
   return (
@@ -31,6 +31,14 @@ const Header = () => {
           <div className="searches  ">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span className="search"> SEARCH</span>
+          </div>
+          <div className="header-login">
+            <Link className="" to={"login"}>
+              <span className="search"> Login</span>
+            </Link>
+            <Link className="" to={"register"}>
+              <span className="search"> Register</span>
+            </Link>
           </div>
           <div className="order-btn hovers">ORDER NOW</div>
           <div className="position-relative">
