@@ -34,10 +34,10 @@ const Header = () => {
             <span className="search"> SEARCH</span>
           </div>
           <div className="header-login">
-            <Link className="" to={"login"}>
+            <Link className="" to={"/login"}>
               <span className="search"> Login</span>
             </Link>
-            <Link className="" to={"register"}>
+            <Link className="" to={"/register"}>
               <span className="search"> Register</span>
             </Link>
           </div>

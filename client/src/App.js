@@ -9,7 +9,6 @@ import Login from "./Pages/Auth/Login";
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

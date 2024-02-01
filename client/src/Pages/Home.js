@@ -695,7 +695,6 @@ const Home = () => {
           </div>
         </section>
         {/* Gallery Section End */}
-        <Footer />
       </div>
     </main>
   );
