@@ -15,7 +15,7 @@ exports.userRegisterController = async (req, res) => {
     if (!answer) {
       return res.status(200).send({ message: "Answer is Required" });
     }
-   
+
     if (!password) {
       return res.status(200).send({ message: "Password is Required" });
     }
@@ -57,7 +57,7 @@ exports.userLoginController = async (req, res) => {
     if (!user) {
       return res.status(400).send({
         success: false,
-        message: "User Not Regster",
+        message: "User Not Register",
       });
     }
 

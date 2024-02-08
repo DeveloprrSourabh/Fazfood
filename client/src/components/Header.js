@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { useAuth } from "../Context/Auth";
 
 const Header = () => {
   const [menu, setMenu] = useState(true);
+  const [auth, setAuth] = useAuth();
   const [category, setCategory] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   let body = document.getElementById("root");
-
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    setUserName(auth?.user?.name);
+  }, [auth, setAuth]);
   return (
     <header className="main-header  d-flex align-items-center justify-content-between p-3">
       <div className="header-menu d-flex align-items-center " id="left-header">
@@ -34,12 +39,18 @@ const Header = () => {
             <span className="search"> SEARCH</span>
           </div>
           <div className="header-login">
-            <Link className="" to={"/login"}>
-              <span className="search"> Login</span>
-            </Link>
-            <Link className="" to={"/register"}>
-              <span className="search"> Register</span>
-            </Link>
+            {auth?.user == null ? (
+              <>
+                <Link className="" to={"/login"}>
+                  <span className="search"> Login</span>
+                </Link>
+                <Link className="" to={"/register"}>
+                  <span className="search"> Register</span>
+                </Link>
+              </>
+            ) : (
+              userName
+            )}
           </div>
           <div className="order-btn hovers">ORDER NOW</div>
           <div className="position-relative">

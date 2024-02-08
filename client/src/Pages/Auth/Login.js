@@ -27,9 +27,10 @@ const Login = () => {
       body: JSON.stringify(crendentials),
     });
     const data = await res.json();
-    if (data) {
+    if (data.success) {
       toast.success(data.message);
       navigate("/");
+      localStorage.setItem("auth", JSON.stringify(data));
     } else {
       toast.error(data.message);
     }

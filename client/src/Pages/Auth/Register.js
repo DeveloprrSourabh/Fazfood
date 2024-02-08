@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Layout from "../../components/Layout";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const host = "http://localhost:8000";
+  const navigate = useNavigate();
   const [crendentials, setCrendentials] = useState({
     name: "",
     email: "",
@@ -27,8 +29,10 @@ const Register = () => {
       body: JSON.stringify(crendentials),
     });
     const data = await res.json();
-    if (data) toast.success(data.message);
-    else {
+    if (data.success) {
+      toast.success(data.message);
+      navigate("/login");
+    } else {
       toast.error(data.message);
     }
   };
