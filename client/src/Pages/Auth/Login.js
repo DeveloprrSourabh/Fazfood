@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Layout from "../../components/Layout";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/Auth";
 
 const Login = () => {
+  const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
   const host = "http://localhost:8000";
   const [crendentials, setCrendentials] = useState({
@@ -30,6 +32,11 @@ const Login = () => {
     if (data.success) {
       toast.success(data.message);
       navigate("/");
+      setAuth({
+        ...auth,
+        user: data?.user,
+        token: data?.token,
+      });
       localStorage.setItem("auth", JSON.stringify(data));
     } else {
       toast.error(data.message);

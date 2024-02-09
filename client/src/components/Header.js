@@ -9,10 +9,11 @@ const Header = () => {
   const [category, setCategory] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   let body = document.getElementById("root");
-  const [userName, setUserName] = useState("");
-  useEffect(() => {
-    setUserName(auth?.user?.name);
-  }, [auth, setAuth]);
+  // const [userName, setUserName] = useState("");
+  // useEffect(() => {
+  //   setUserName(auth?.user?.name);
+  // }, [auth?.user?.name]);
+
   return (
     <header className="main-header  d-flex align-items-center justify-content-between p-3">
       <div className="header-menu d-flex align-items-center " id="left-header">
@@ -39,7 +40,23 @@ const Header = () => {
             <span className="search"> SEARCH</span>
           </div>
           <div className="header-login">
-            {auth?.user == null ? (
+            {auth?.user != null ? (
+              <div className="d-flex gap-4  align-items-center">
+                <Link className="" to={"/"}>
+                  <div className="searches"> {auth?.user?.name}</div>
+                </Link>
+                <div
+                  className="order-btn hovers"
+                  onClick={() => {
+                    localStorage.setItem("auth", "");
+                    setAuth(null);
+                    // setUserName("");
+                  }}
+                >
+                  Logout
+                </div>
+              </div>
+            ) : (
               <>
                 <Link className="" to={"/login"}>
                   <span className="search"> Login</span>
@@ -48,8 +65,6 @@ const Header = () => {
                   <span className="search"> Register</span>
                 </Link>
               </>
-            ) : (
-              userName
             )}
           </div>
           <div className="order-btn hovers">ORDER NOW</div>
