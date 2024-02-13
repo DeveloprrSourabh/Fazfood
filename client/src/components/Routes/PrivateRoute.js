@@ -3,7 +3,7 @@ import { useAuth } from "../../Context/Auth";
 import { Outlet } from "react-router-dom";
 
 const PrivateRoute = () => {
-  const host = "http://localhost:8080";
+  const host = "http://localhost:8000";
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
 
@@ -26,7 +26,7 @@ const PrivateRoute = () => {
       authCheck();
     }
   });
-  return ok ? <Outlet></Outlet> : "Loading...";
+  return ok ? <Outlet /> : "Loading...";
 };
 
 export default PrivateRoute;

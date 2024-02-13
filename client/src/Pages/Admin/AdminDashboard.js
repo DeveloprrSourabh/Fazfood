@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const AdminDashboard = () => {
+  const location = useLocation();
+  const path = location.pathname;
+  console.log(path);
   return (
     <>
-      <Layout>
+      <Layout admin>
         <section id="admin">
           <div className="admin-dashboard">
             <div className="row admin-row">
               <div className="col-sm-3">
                 <div className="menu-list">
-                  <ul className="list-item">
-                    <li className="main-list">
+                  <ul className="dashboard-list-item">
+                    <li
+                      className={`main-list ${
+                        path == "/dashboard/admin" ? "active" : ""
+                      }`}
+                    >
                       <div className="menu-item">
-                        <Link to={""} className="list-item-link">
+                        <Link to={"../profile"} className="list-item-link">
                           Profile
                         </Link>
                       </div>

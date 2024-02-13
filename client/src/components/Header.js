@@ -112,13 +112,28 @@ const Header = () => {
             </div>
             {menu ? (
               <ul className="side-header-ul " id="menus">
-                <li className="side-menu-list">
-                  <Link
-                    className="d-flex justify-content-between align-items-center"
-                    to={""}
-                  >
-                    <span>Home</span> <span>{">"}</span>
-                  </Link>
+                <li
+                  className="side-menu-list"
+                  onClick={() => {
+                    setSidebar(false);
+                    body.classList.remove("shown");
+                  }}
+                >
+                  {auth?.user?.role === 1 ? (
+                    <Link
+                      className="d-flex justify-content-between align-items-center"
+                      to={"/dashboard/admin"}
+                    >
+                      <span>Dashboard</span> <span>{">"}</span>
+                    </Link>
+                  ) : (
+                    <Link
+                      className="d-flex justify-content-between align-items-center"
+                      to={"/dashboard/user"}
+                    >
+                      <span>Dashboard</span> <span>{">"}</span>
+                    </Link>
+                  )}
                 </li>
                 <li className="side-menu-list">
                   <Link

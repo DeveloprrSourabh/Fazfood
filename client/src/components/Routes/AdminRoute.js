@@ -3,7 +3,7 @@ import { useAuth } from "../../Context/Auth";
 import { Outlet } from "react-router-dom";
 
 const AdminRoute = () => {
-  const host = "http://localhost:8080";
+  const host = "http://localhost:8000";
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
   useEffect(() => {
@@ -24,8 +24,8 @@ const AdminRoute = () => {
     if (auth?.token) {
       checkAdmin();
     }
-  }, []);
-  return ok ? <Outlet></Outlet> : "Loading...";
+  }, [auth?.token]);
+  return ok ? <Outlet /> : "Loading...";
 };
 
 export default AdminRoute;
