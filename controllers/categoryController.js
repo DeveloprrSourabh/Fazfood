@@ -99,10 +99,39 @@ exports.deleteCategoryController = async (req, res) => {
   }
 };
 
-// Getting All Products
-exports.getAllProducts = async (req, res) => {
+// Getting All Categories
+exports.getAllCategory = async (req, res) => {
   try {
+    const categories = await Category.find({});
+    return res.status(200).send({
+      success: true,
+      message: "Get All Category Successfully",
+      categories,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(400).send({
+      success: false,
+      message: "Error While Get All Categories",
+    });
+  }
+};
+
+// Getting Single Category
+exports.getSingleCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const category = await Category.findById(id);
+    return res.status(200).send({
+      success: true,
+      message: "Get Single Category Successfully",
+      category,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send({
+      success: false,
+      message: "Error While Getting Single Category",
+    });
   }
 };

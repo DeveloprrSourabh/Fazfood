@@ -165,3 +165,39 @@ exports.deleteProductController = async (req, res) => {
     });
   }
 };
+// Getting All Products
+exports.getAllProducts = async (req, res) => {
+  try {
+    const products = await Product.find({});
+    return res.status(200).send({
+      success: false,
+      message: "All Products Get Successfully",
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send({
+      success: false,
+      message: "Error While Getting All Products",
+    });
+  }
+};
+
+// Getting Single Product
+exports.getSingleProduct = async (erq, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    return res.status(200).send({
+      success: true,
+      message: "Get Single Product Successfully",
+      product,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send({
+      success: false,
+      message: "Error While Getting Single Product",
+    });
+  }
+};
